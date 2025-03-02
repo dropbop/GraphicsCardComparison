@@ -28,4 +28,4 @@ def plot_png():
     return Response(png_image.getvalue(), mimetype='image/png')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False)
