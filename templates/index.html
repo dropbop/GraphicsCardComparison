@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Graphics Card Price & Performance Insights</title>
+  <title>Interactive Data Visualizations</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Bootstrap CSS for styling -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
@@ -10,17 +10,17 @@
 <body>
   <div class="container mt-5">
     <header class="mb-4">
-      <h1 class="display-4">Graphics Card Price & Performance Insights</h1>
-      <p class="lead">Explore visualizations generated with matplotlib.</p>
+      <h1 class="display-4">Interactive Data Visualizations</h1>
+      <p class="lead">Explore interactive charts built with Plotly.</p>
     </header>
 
     <section id="visualizations">
-      <!-- Matplotlib Chart -->
       <div class="mb-5">
-        <h2>Sample Matplotlib Chart</h2>
+        <h2>Interactive Chart</h2>
         <div class="card">
-          <div class="card-body text-center">
-            <img src="{{ url_for('plot_png') }}" class="img-fluid" alt="Matplotlib Chart">
+          <div class="card-body">
+            <!-- Embed the interactive Plotly chart -->
+            {{ plot_html | safe }}
           </div>
         </div>
       </div>
