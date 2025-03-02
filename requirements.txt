@@ -6,3 +6,6 @@ click==8.0.1
 gunicorn==20.1.0
 matplotlib
 plotly
+pandas
+gspread
+oauth2client
