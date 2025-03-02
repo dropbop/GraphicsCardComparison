@@ -6,33 +6,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Bootstrap CSS for styling -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Plotly.js -->
-  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 <body>
   <div class="container mt-5">
     <header class="mb-4">
-      <h1 class="display-4">GPU Performance Visualizations</h1>
-      <p class="lead">Interactive charts powered by Google Sheets data.</p>
+      <h1 class="display-4">Interactive Data Visualizations</h1>
+      <p class="lead">Explore interactive charts built with Plotly.</p>
     </header>
 
     <section id="visualizations">
-      {% if plot_htmls %}
-        {% for plot_html in plot_htmls %}
-        <div class="mb-5">
-          <div class="card">
-            <div class="card-body">
-              <!-- Embed the interactive Plotly chart -->
-              {{ plot_html | safe }}
-            </div>
+      <div class="mb-5">
+        <h2>Interactive Chart</h2>
+        <div class="card">
+          <div class="card-body">
+            <!-- Embed the interactive Plotly chart -->
+            {{ plot_html | safe }}
           </div>
         </div>
-        {% endfor %}
-      {% else %}
-        <div class="alert alert-warning">
-          No visualization data available.
-        </div>
-      {% endif %}
+      </div>
     </section>
   </div>
 </body>
