@@ -1,7 +1,6 @@
 flask
-werkzeug==2.0.1
-gunicorn==20.1.0
+werkzeug
+gunicorn
 plotly
 pandas
-gspread
-oauth2client
+
