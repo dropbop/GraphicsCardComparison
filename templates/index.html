@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Graphics Card Price & Performance Insights</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap CSS for basic styling -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container mt-5">
+    <header class="mb-4">
+      <h1 class="display-4">Graphics Card Price & Performance Insights</h1>
+      <p class="lead">Explore visualizations of price trends and performance metrics from our latest dataset.</p>
+    </header>
+
+    <section id="visualizations">
+      <!-- Price Trends Visualization -->
+      <div class="mb-5">
+        <h2>Price Trends</h2>
+        <div class="card">
+          <div class="card-body" style="height: 400px;">
+            <canvas id="chart-price-trends"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- Performance Metrics Visualization -->
+      <div class="mb-5">
+        <h2>Performance Metrics</h2>
+        <div class="card">
+          <div class="card-body" style="height: 400px;">
+            <canvas id="chart-performance"></canvas>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Chart.js library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+  <script>
+    // Example: Price Trends Chart (Line Chart)
+    const ctxPrice = document.getElementById('chart-price-trends').getContext('2d');
+    const priceChart = new Chart(ctxPrice, {
+      type: 'line',
+      data: {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+        datasets: [{
+          label: 'Average Price ($)',
+          data: [200, 220, 210, 230, 225, 240],
+          fill: false,
+          borderColor: 'rgb(75, 192, 192)',
+          tension: 0.1
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+      }
+    });
+
+    // Example: Performance Metrics Chart (Bar Chart)
+    const ctxPerformance = document.getElementById('chart-performance').getContext('2d');
+    const performanceChart = new Chart(ctxPerformance, {
+      type: 'bar',
+      data: {
+        labels: ['Card A', 'Card B', 'Card C', 'Card D'],
+        datasets: [{
+          label: 'Performance Score',
+          data: [85, 90, 80, 95],
+          backgroundColor: 'rgba(153, 102, 255, 0.2)',
+          borderColor: 'rgba(153, 102, 255, 1)',
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
